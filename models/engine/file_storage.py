@@ -69,7 +69,7 @@ class FileStorage:
 
     def attributes(self):
         """Method that returns the classname and their attributes."""
-        attribute = {
+        attributes = {
             "BaseModel":
                      {"id": str,
                       "created_at": datetime.datetime,
@@ -102,5 +102,5 @@ class FileStorage:
             {"place_id": str,
                          "user_id": str,
                          "text": str}
-            }
-        return attribute
+        }
+        return attributes
