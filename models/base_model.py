@@ -1,5 +1,7 @@
+#!/usr/bin/python3
 """
-The BaseModel class in this module defines all the common attributes and methods that other classes can inherit from.
+The BaseModel class in this module defines all the common attributes
+and methods that other classes can inherit from.
 """
 
 import uuid
@@ -9,13 +11,14 @@ from models import storage
 
 class BaseModel:
 
-   """
-Public instance attributes:
-
-id (str): A unique identifier assigned to each instance when it is created.
-created_at (datetime): The date and time when the instance was created.
-updated_at (datetime): The date and time when the instance was last updated. This attribute is updated automatically whenever the instance is changed.
-"""
+    """
+    Public instance attributes:
+    id (str): A unique identifier assigned to each instance when it is created
+    created_at (datetime): The date and time when the instance was created
+    updated_at (datetime): The date and time when the instance was last
+    updated. This attribute is updated automatically whenever the instance is
+    changed.
+    """
 
     def __init__(self, *args, **kwargs):
         """Initializes instance attributes
@@ -48,7 +51,8 @@ updated_at (datetime): The date and time when the instance was last updated. Thi
             format(type(self).__name__, self.id, self.__dict__)
 
     def save(self):
-        """updates the public instance attribute updated_at to current datetime"""
+        """updates the public instance attribute updated_at to current
+        datetime"""
 
         self.updated_at = datetime.now()
         storage.save()
