@@ -126,6 +126,28 @@ class HBNBCommand(cmd.Cmd):
             nlist = [str(obj) for key, obj in storage.all().items()]
             print(nlist)
 
+    def update_dict(self, classname, uid, s_dict):
+        """Method that updates an instance based on its id to a dictionary."""
+        s = s_dict.replace("'", '"')
+        d = json.loads(s)
+        if not classname:
+            print("** class name missing **")
+        elif classname not in storage.classes():
+            print("** class doesn't exist **")
+        elif uid is None:
+            print("** instance id missing **")
+        else:
+            key = "{}.{}".format(classname, uid)
+            if key not in storage.all():
+                print("** no instance found **")
+            else:
+                attributes = storage.attributes()[classname]
+                for attribute, value in d.items():
+                    if attribute in attributes:
+                        value = attributes[attribute](value)
+                    setattr(storage.all()[key], attribute, value)
+                storage.all()[key].save()
+
     def do_update(self, line):
         """Method that updates an instance based on the class name and id
         by adding or updating attribute.
