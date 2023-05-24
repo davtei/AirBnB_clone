@@ -1,0 +1,56 @@
+/* For Filters style */
+
+.filters {
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Locations and amenities style */
+.locations,
+.amenities {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+}
+
+.locations {
+    border-right: 1px solid #DDDDDD;
+}
+
+.filters h3 {
+    font-weight: 600;
+    margin: 2px 20px;
+}
+
+.filters h4 {
+    font-weight: 400;
+    font-size: 14px;
+    margin: 2px 20px;
+}
+
+/* Search Button style */
+.filters button {
+    font-size: 18px;
+    background-color: #FF5A5F;
+    color: #FFFFFF;
+    height: 48px;
+    width: 20%;
+    border: none;
+    border-radius: 4px;
+    position: absolute;
+    right: 30px;
+}
+
+/* Hover effect for search button */
+.filters button:hover {
+    opacity: 0.9;
+}
