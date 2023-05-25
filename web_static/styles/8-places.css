@@ -80,3 +80,7 @@
 .user {
     margin: 10px auto;
 }
+
+footer {
+    position: relative;
+}
